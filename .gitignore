@@ -11,3 +11,7 @@
 *.lai
 *.la
 *.a
+
+# SSH Keys
+authorized_keys
+*.pub
