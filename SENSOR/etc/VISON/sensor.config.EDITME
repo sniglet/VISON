@@ -39,28 +39,30 @@ SVC_OSSEC=yes
 # Sensors Active
 # A single device may have more than one nic used for listening. This will require seperate configs for each, possibly 
 # seperate configs for seperate rulesets on the SAME NIC. Changing sensorcount to a number other than 1 will cause code 
-# to loop from 1 to n, with the names being used as shown below.
+# to loop from 1 to n, with the names being used as shown below. THERE MUST be an equivalent folder for each sensorcount beneath this one. (e.g. /etc/VISON/SENSOR/etc/SENSOR1 )
 
 SENSORCOUNT=1
 
+# you MUST have a SENSORX folder for each sensor count 
 
 SENSOR1NAME="Public Interface"
 SENSOR1DEV=eth1
 SENSOR1DESC="Traffic reaching Yoyodyne Lab from the outside"
 SENSOR1configName="\.sensor1"     # e.g. snort.sensor1.conf
+SENSOR1networks="10.0.0.1/8"
 
 #SENSOR2NAME="Internal Interface"
 #SENSOR2DEV=eth2
 #SENSOR2DESC="Internal Yoyodyne Lab Traffic"
 #SENSOR2configName="\.sensor1"     # e.g. snort.sensor2.conf
-                                   # In this example, Sensor 2 uses Sensor 1's rulesets
+#SENSOR2networks="192.168.0.0/16""
 
 #SENSOR2NAME="DMZ Interface"
 #SENSOR2DEV=eth3
 #SENSOR2DESC="Traffic reaching Yoyodyne Lab's DMZ"
 #SENSOR2configName="\.sensor3"     # e.g. snort.sensor3.conf
-                                   # In this example, Sensor 3 uses a unique ruleset specific
                                    # to a Web/DMZ enclave
+#SENSOR2networks="165.127.99.0/24"
 
 
 # Config End
